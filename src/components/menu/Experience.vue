@@ -1,0 +1,60 @@
+<template>
+    <div>
+        <v-flex xs12 v-for='experience in experiences'>
+            <v-card>
+                <v-card-title primary-title>
+                    <div>
+                        <h2 class='company'>{{ experience.company }}</h2>
+                        <h3 class='role'>{{ experience.role }}</h3>
+                        <p>{{ experience.yearStart }} - {{ experience.yearEnd }}</p>
+                    </div>
+                </v-card-title>
+                <v-btn
+                        v-if="loggedIn"
+                        color='red'
+                        dark
+                        small
+                        absolute
+                        bottom
+                        right
+                        fab
+                        v-on:click='removeExperience(experience)'
+                >
+                    <v-icon>close</v-icon>
+                </v-btn>
+            </v-card>
+            <br>
+        </v-flex>
+    </div>
+</template>
+<script>
+    import fireb from '../../utils/firebaseConfig'
+
+    var experienceDB = fireb.database().ref('experiences/')
+    export default {
+        data () {
+            return {
+                experiences: []
+            }
+        },
+        methods: {
+            removeExperience (experience) {
+                experienceDB.child(experience['.key']).remove()
+            }
+        },
+        computed: {
+            loggedIn () {
+                return this.$store.getters.loggedState
+            }
+        },
+        firebase: {
+            experiences: experienceDB
+        }
+    }
+</script>
+<style scoped>
+    .company {
+        font-size: 3em;
+        opacity: 0.5;
+    }
+</style>
