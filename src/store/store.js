@@ -1,23 +1,24 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import fireb from '../utils/firebaseConfig'
 
 Vue.use(Vuex)
 
 export const store = new Vuex.Store({
     state: {
         profileAdd: false,
-        loggedIn: false,
-        signInModal: false
+        signInModal: false,
+        loggedIn: false
     },
     getters: {
         profileState: state => {
             return state.profileAdd
         },
-        loggedState: state => {
-            return state.loggedIn
-        },
         modalState: state => {
             return state.signInModal
+        },
+        userStatus: state => {
+            return state.loggedIn
         }
     },
     mutations: {
@@ -27,19 +28,32 @@ export const store = new Vuex.Store({
         setModalState (state) {
             state.signInModal = !state.signInModal
         },
-        logUserIn (state) {
-            state.loggedIn = !state.loggedIn
+        signIn (state) {
+            state.loggedIn = true
+        },
+        signOut (state) {
+            state.loggedIn = false
         }
     },
     actions: {
         changeProfileState (context) {
             context.commit('setProfileState')
         },
-        logIn (context) {
-            context.commit('logUserIn')
-        },
         changeModalState (context) {
             context.commit('setModalState')
+        },
+        userStatus (context) {
+            fireb.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    // User is signed in
+                    context.commit('signIn')
+                    console.log('user is signed in')
+                } else {
+                    // User is signed out
+                    context.commit('signOut')
+                    console.log('user is signed out')
+                }
+            })
         }
     }
 })

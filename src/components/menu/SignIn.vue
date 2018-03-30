@@ -44,7 +44,7 @@
             signIn () {
                 fireb.auth().signInWithEmailAndPassword(this.username, this.password).then(
                     user => {
-                        this.$store.dispatch('logIn')
+                        this.$store.dispatch('signIn')
                         this.$store.dispatch('changeModalState')
                     }
                 ).catch(

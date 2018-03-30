@@ -44,7 +44,7 @@
         },
         computed: {
             loggedIn () {
-                return this.$store.getters.loggedState
+                return this.$store.getters.userStatus
             }
         },
         firebase: {

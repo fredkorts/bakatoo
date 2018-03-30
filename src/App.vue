@@ -187,7 +187,7 @@
             logUserOut () {
                 fireb.auth().signOut().then(() => {
                     this.$router.replace('/')
-                    this.$store.dispatch('logIn')
+                    this.$store.dispatch('signOut')
                 })
             }
         },
@@ -195,12 +195,16 @@
             activateProfile () {
                 return this.$store.getters.profileState
             },
-            loggedIn () {
-                return this.$store.getters.loggedState
-            },
             signIn () {
                 return this.$store.getters.modalState
+            },
+            loggedIn () {
+                return this.$store.getters.userStatus
             }
+        },
+        created() {
+            // Check user status
+            this.$store.dispatch('userStatus')
         },
         name: 'App',
         components: {AddToProfile, SignIn}
