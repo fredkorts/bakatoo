@@ -6,7 +6,7 @@
                     <v-card-title primary-title>
                         <div>
                             <h3 class="headline mb-0">{{ e.facility }}</h3>
-                            <h3>{{ e.yearStart }} - {{ e.yearEnd }}</h3>
+                            <h3>{{ e.yearStart | date}} - {{ e.yearEnd | date}}</h3>
                             <br>
                             <div><b>Eriala:</b> {{ e.degree }}</div>
                         </div>
@@ -42,7 +42,12 @@
         },
         methods: {
             removeEducation (e) {
-                educationDB.child(e['.key']).remove()
+                if (confirm("Kindel, et tahad kustutada?")) {
+                    educationDB.child(e['.key']).remove()
+                }
+                else {
+                    console.log("Kustutamine jäi ära...")
+                }
             }
         },
         computed: {

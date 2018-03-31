@@ -6,7 +6,7 @@
                     <div>
                         <h2 class='company'>{{ experience.company }}</h2>
                         <h3 class='role'>{{ experience.role }}</h3>
-                        <p>{{ experience.yearStart }} - {{ experience.yearEnd }}</p>
+                        <p>{{ experience.yearStart  | date }} - {{ experience.yearEnd | date }}</p>
                     </div>
                 </v-card-title>
                 <v-btn
@@ -39,7 +39,12 @@
         },
         methods: {
             removeExperience (experience) {
-                experienceDB.child(experience['.key']).remove()
+                if (confirm("Kindel, et tahad kustutada?")) {
+                    experienceDB.child(experience['.key']).remove()
+                }
+                else {
+                    console.log("Kustutamine jäi ära...")
+                }
             }
         },
         computed: {

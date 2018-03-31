@@ -56,7 +56,7 @@
                 this.newExperience.role = ''
                 this.newExperience.yearStart = ''
                 this.newExperience.yearEnd = ''
-                this.$store.dispatch('changeProfileState')
+                this.$store.dispatch('showAddToProfile')
             }
         }
     }

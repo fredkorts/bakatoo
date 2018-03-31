@@ -52,7 +52,7 @@
                 this.newProject.projectName = ''
                 this.newProject.projectURL = ''
                 this.newProject.imageURL = ''
-                this.$store.dispatch('changeProfileState')
+                this.$store.dispatch('showAddToProfile')
             }
         }
     }

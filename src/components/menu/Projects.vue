@@ -38,7 +38,12 @@
         },
         methods: {
             removeProject (item) {
-                projectsDB.child(item['.key']).remove()
+                if (confirm("Kindel, et tahad kustutada?")) {
+                    projectsDB.child(item['.key']).remove()
+                }
+                else {
+                    console.log("Kustutamine jäi ära...")
+                }
             }
         },
         computed: {
@@ -52,6 +57,20 @@
     }
 </script>
 <style scoped>
+    .headline {
+        color: white;
+        font-size: 2.5em !important;
+        text-shadow: 2px 2px black;
+        transition: text-shadow .5s ease;
+    }
+    .headline a {
+        color: white;
+        text-decoration: none
+    }
+    .headline a:hover {
+        text-shadow: 4px 2px black;
+        transition: text-shadow .5s ease;
+    }
     .card-container {
         display: flex;
         flex-direction: row;

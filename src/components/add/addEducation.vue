@@ -57,7 +57,7 @@
                 this.newEducation.facility = ''
                 this.newEducation.yearStart = ''
                 this.newEducation.yearEnd = ''
-                this.$store.dispatch('changeProfileState')
+                this.$store.dispatch('showAddToProfile')
             }
         }
     }
