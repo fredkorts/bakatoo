@@ -6,7 +6,7 @@
                 <v-layout row wrap>
                     <v-flex xs12 sm10 md10 class="mx-auto custom-height">
                         <v-layout row wrap>
-                            <v-flex xs12 md4>
+                            <v-flex xs12 md3 offset-md1>
                                 <v-card>
                                     <sidebar></sidebar>
                                 </v-card>

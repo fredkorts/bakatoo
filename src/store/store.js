@@ -74,6 +74,12 @@ export const store = new Vuex.Store({
         },
         toggleConfirmation (context) {
             context.commit('toggleConfirmation')
+        },
+        signIn (context) {
+            context.commit('signIn')
+        },
+        signOut (context) {
+            context.commit('signOut')
         }
     }
 })

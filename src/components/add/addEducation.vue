@@ -9,17 +9,17 @@
             </v-layout>
             <br>
             <v-layout row>
+                <v-flex xs12>
+                    <v-text-field name="specialization" label="Eriala" id="specialization" v-model="newEducation.degree" required></v-text-field>
+                </v-flex>
+            </v-layout>
+            <br>
+            <v-layout row>
                 <v-flex xs12 sm5>
                     <v-date-picker v-model="newEducation.yearStart"></v-date-picker>
                 </v-flex>
                 <v-flex xs12 sm5>
                     <v-date-picker v-model="newEducation.yearEnd"></v-date-picker>
-                </v-flex>
-            </v-layout>
-            <br>
-            <v-layout row>
-                <v-flex xs12>
-                    <v-text-field name="specialization" label="Eriala" id="specialization" v-model="newEducation.degree" required></v-text-field>
                 </v-flex>
             </v-layout>
             <br>

@@ -5,10 +5,10 @@
                 <v-card>
                     <v-card-title primary-title>
                         <div>
-                            <h3 class="headline mb-0">{{ e.facility }}</h3>
-                            <h3>{{ e.yearStart | date}} - {{ e.yearEnd | date}}</h3>
+                            <h3 class="school mb-0">{{ e.facility }}</h3>
                             <br>
                             <div><b>Eriala:</b> {{ e.degree }}</div>
+                            <p>{{ e.yearStart | date}} - {{ e.yearEnd | date}}</p>
                         </div>
                     </v-card-title>
                     <v-btn
@@ -61,5 +61,8 @@
     }
 </script>
 <style scoped>
-
+    .school {
+        font-size: 3em;
+        opacity: 0.5;
+    }
 </style>

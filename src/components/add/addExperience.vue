@@ -51,12 +51,16 @@
         },
         methods: {
             addExperience () {
-                experienceDB.push(this.newExperience)
-                this.newExperience.company = ''
-                this.newExperience.role = ''
-                this.newExperience.yearStart = ''
-                this.newExperience.yearEnd = ''
-                this.$store.dispatch('showAddToProfile')
+                experienceDB.push(this.newExperience).then(
+                    console.log("Data pushed successfully!"),
+                    this.newExperience.company = '',
+                    this.newExperience.role = '',
+                    this.newExperience.yearStart = '',
+                    this.newExperience.yearEnd = '',
+                    this.$store.dispatch('showAddToProfile')
+                ).catch (err) (
+                    console.log(err)
+                ).bind(this)
             }
         }
     }
