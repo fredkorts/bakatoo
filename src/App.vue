@@ -113,33 +113,6 @@
     import fireb from './utils/firebaseConfig'
 
 	export default {
-        data: function () {
-            return {
-                skills: [
-                    {
-                        title: 'HTML',
-                        score: 80
-                    },
-                    {
-                        title: 'CSS',
-                        score: 88
-                    },
-                    {
-                        title: 'JavaScript',
-                        score: 60
-                    },
-                    {
-                        title: 'Wordpress',
-                        score: 60
-                    },
-                    {
-                        title: 'Vue.js',
-                        score: 50
-                    }
-                ],
-                maxSkill: 50
-            }
-        },
         methods: {
             changeProfileState () {
                 this.$store.dispatch('showAddToProfile')

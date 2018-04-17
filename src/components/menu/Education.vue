@@ -32,8 +32,8 @@
 </template>
 <script>
     import fireb from '../../utils/firebaseConfig'
-
     var educationDB = fireb.database().ref('education/')
+
     export default {
         data () {
             return {
