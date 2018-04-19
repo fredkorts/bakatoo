@@ -35,11 +35,6 @@
     var educationDB = fireb.database().ref('education/')
 
     export default {
-        data () {
-            return {
-                education: []
-            }
-        },
         methods: {
             removeEducation (e) {
                 if (confirm("Kindel, et tahad kustutada?")) {

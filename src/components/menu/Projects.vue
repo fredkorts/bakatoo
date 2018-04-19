@@ -31,11 +31,6 @@
 
     var projectsDB = fireb.database().ref('projects/')
     export default {
-        data () {
-            return {
-                portfolio: []
-            }
-        },
         methods: {
             removeProject (item) {
                 if (confirm("Kindel, et tahad kustutada?")) {

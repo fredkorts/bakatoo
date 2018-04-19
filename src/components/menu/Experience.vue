@@ -32,11 +32,6 @@
 
     var experienceDB = fireb.database().ref('experiences/')
     export default {
-        data () {
-            return {
-                experiences: []
-            }
-        },
         methods: {
             removeExperience (experience) {
                 if (confirm("Kindel, et tahad kustutada?")) {
