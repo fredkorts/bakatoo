@@ -48,7 +48,13 @@
         },
         methods: {
             addProject () {
-                projectsDB.push(this.newProject)
+                projectsDB.push(this.newProject, function (error) {
+                    if (error) {
+                        alert("!!! Ei õnnestunud lükata andmed andmebaasi !!!")
+                    } else {
+                        alert("Andmed edukalt lükatud andmebaasi!")
+                    }
+                })
                 this.newProject.projectName = ''
                 this.newProject.projectURL = ''
                 this.newProject.imageURL = ''

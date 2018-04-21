@@ -51,16 +51,18 @@
         },
         methods: {
             addExperience () {
-                experienceDB.push(this.newExperience).then(
-                    console.log("Data pushed successfully!"),
-                    this.newExperience.company = '',
-                    this.newExperience.role = '',
-                    this.newExperience.yearStart = '',
-                    this.newExperience.yearEnd = '',
-                    this.$store.dispatch('showAddToProfile')
-                ).catch (err) (
-                    console.log(err)
-                ).bind(this)
+                experienceDB.push(this.newExperience, function (error) {
+                    if (error) {
+                        alert("!!! Ei õnnestunud lükata andmed andmebaasi !!!")
+                    } else {
+                        alert("Andmed edukalt lükatud andmebaasi!")
+                    }
+                })
+                this.newExperience.company = ''
+                this.newExperience.role = ''
+                this.newExperience.yearStart = ''
+                this.newExperience.yearEnd = ''
+                this.$store.dispatch('showAddToProfile')
             }
         }
     }

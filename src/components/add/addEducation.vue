@@ -52,7 +52,13 @@
         },
         methods: {
             addEducation () {
-                educationDB.push(this.newEducation)
+                educationDB.push(this.newEducation, function (error) {
+                    if (error) {
+                        alert("!!! Ei õnnestunud lükata andmed andmebaasi !!!")
+                    } else {
+                        alert("Andmed edukalt lükatud andmebaasi!")
+                    }
+                })
                 this.newEducation.degree = ''
                 this.newEducation.facility = ''
                 this.newEducation.yearStart = ''
