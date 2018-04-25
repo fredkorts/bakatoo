@@ -1,20 +1,30 @@
 # myresume
 
-> A dynamic resume built with Vue.js
+> Dünaamiline CV rakendus Vue.js baasil.
 
-## Build Setup
+Antud rakendus eeldab npm käsu olemasolu. Selle saab paigaldada oma süsteemi Node.js tarkvaraga mis on saadaval aadressil https://nodejs.org/en/
+
+Järgnevad käsud saab jooksutada oma süsteemi käsurealt.
+
+1. Autor soovitab tõmmata selle projekti git clone käsuga:
 
 ``` bash
-# install dependencies
+# Autor soovitab tõmmata selle projekti git clone käsuga
+git clone https://github.com/fredkorts/bakatoo.git
+
+# Sisenege loodud "bakatoo" kausta
+cd bakatoo
+
+# Enne projekti käivitamist on vaja jooksutada alljärgnev käsk, et paigaldada kõik projektiga seotud paketid.
 npm install
 
-# serve with hot reload at localhost:8080
+# Järgnev käsk jooksutab lokaalse serveri aadressil localhost:8080
 npm run dev
 
-# build for production with minification
+# Juhul kui on soov kompileerida projekti failid jooksutage:
 npm run build
 
-# build for production and view the bundle analyzer report
+# Kompileerimisega seotud rapordi saab käsuga:
 npm run build --report
 ```
 
