@@ -6,7 +6,6 @@ Antud rakendus eeldab npm käsu olemasolu. Selle saab paigaldada oma süsteemi N
 
 Järgnevad käsud saab jooksutada oma süsteemi käsurealt.
 
-1. Autor soovitab tõmmata selle projekti git clone käsuga:
 
 ``` bash
 # Autor soovitab tõmmata selle projekti git clone käsuga
