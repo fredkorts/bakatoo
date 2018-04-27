@@ -27,7 +27,7 @@
         </v-card-text>
         <v-subheader><h3>SKILLS</h3></v-subheader>
         <br>
-        <v-card-text v-for="skill in skills" class="custom-slider-padding">
+        <v-card-text v-for="(skill, index) in skills" :key="`skill-${index}`" class="custom-slider-padding">
             <v-layout row wrap>
                 <v-flex xs10 offset-xs1>
                     <h4 style="text-align:left;">{{ skill.title }}</h4>

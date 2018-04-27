@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-flex xs12 v-for='experience in experiences'>
+        <v-flex xs12 v-for='(experience, index) in experiences' :key="`experience-${index}`">
             <v-card>
                 <v-card-title primary-title>
                     <div>

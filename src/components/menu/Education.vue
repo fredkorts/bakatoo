@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-layout row wrap>
-            <v-flex xs12 v-for="e in education">
+            <v-flex xs12 v-for="(e, index) in education" :key="`e-${index}`">
                 <v-card>
                     <v-card-title primary-title>
                         <div>

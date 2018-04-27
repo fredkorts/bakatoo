@@ -2,7 +2,7 @@
     <div>
         <v-container grid-list-md>
             <v-layout row wrap>
-                <v-flex xs12 md6 pa-3 v-for="item in portfolio">
+                <v-flex xs12 md6 pa-3 v-for="(item, index) in portfolio" :key="`item-${index}`">
                     <v-card>
                         <v-card-media :src="item.imageURL" height="200px">
                         </v-card-media>
